@@ -1,0 +1,21 @@
+ssh_authorized_keys:
+- github:mibaboo
+write_files:
+- encoding: ""
+  content: |-
+    #!/bin/bash
+    echo hello, local service start
+  owner: root
+  path: /etc/local.d/example.start
+  permissions: '0755'
+hostname: k3s-master
+init_cmd:
+- "echo hello, init command"
+boot_cmd:
+- "echo hello, boot command"
+run_cmd:
+- "echo hello, run command"
+k3os:
+  password: rancher
+  token: TOKEN_VALUE
+
